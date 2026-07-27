@@ -1,25 +1,31 @@
-import "../styles/Hero.css";
 import { Link } from "react-router-dom";
-
+import "../styles/Hero.css";
 
 function Hero() {
-    return (
-        <section className="hero">
+  return (
+    <section className="hero">
+      <div className="hero-content">
+        <span className="hero-badge">✨ AI-Powered Career Planning</span>
 
-            <h1>CareerPilot AI</h1>
+        <h1 className="hero-title">
+          Navigate Your Tech Career with <span>CareerPilot AI</span>
+        </h1>
 
-            <p>
-                Discover your perfect career path with the power of AI.
-            </p>
+        <p className="hero-subtitle">
+          Discover high-demand career paths, analyze your skill gaps, and get a personalized learning roadmap tailored to your tech goals.
+        </p>
 
-            
-              <Link to="/career-advisor" className="hero-btn">
-              Get Started !
-            </Link> 
-            
-
-        </section>
-    );
+        <div className="hero-cta-group">
+          <Link to="/career-advisor" className="hero-btn primary-btn">
+            Get Started Free →
+          </Link>
+          <a href="#features" className="hero-btn secondary-btn">
+            Explore Features
+          </a>
+        </div>
+      </div>
+    </section>
+  );
 }
 
 export default Hero;

@@ -1,36 +1,98 @@
-.career-form{
+
+.career-form {
     width: 100%;
-    max-width: 700px;
-    margin: 40px auto;
+    max-width: 650px;
+    margin: 30px auto;
+    padding: 40px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e5e7eb;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 22px;
+    text-align: left;
 }
 
-.career-form input,
-.career-form textarea{
-    padding: 15px;
-    border: 1px solid #000000;
-    border-radius: 10px;
-    font-size: 16px;
-    outline: none;
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
+
+
+.form-group label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #374151;
+    letter-spacing: -0.2px;
+}
+
+/* Form Inputs & Textarea */
+.career-form input,
+.career-form textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1.5px solid #d1d5db;
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: inherit;
+    color: #1f2937;
+    background-color: #f9fafb;
+    outline: none;
+    transition: all 0.2s ease-in-out;
+}
+
+.career-form input::placeholder,
+.career-form textarea::placeholder {
+    color: #9ca3af;
+}
+
 
 .career-form input:focus,
-.career-form textarea:focus{
-    border-color: #5b5f69;
+.career-form textarea:focus {
+    border-color: #2563eb;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
 }
 
-.career-form button{
-    padding: 15px;
+
+.career-form textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+
+
+.submit-btn {
+    width: 100%;
+    padding: 16px;
+    margin-top: 10px;
     border: none;
     border-radius: 10px;
-    background: #0071e3;
-    color: white;
-    font-size: 18px;
+    background: #2563eb;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
     cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
 }
 
-.career-form button:hover{
-    background: #005bb5;
+.submit-btn:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+
+@media (max-width: 640px) {
+    .career-form {
+        padding: 24px;
+        margin: 20px auto;
+        border-radius: 12px;
+    }
 }
