@@ -19,12 +19,12 @@ function CareerAdvisor() {
     setAiResponse("");
 
     try {
-      // Call our Gemini service function
+      // Call Gemini service function
       const result = await generateCareerAdvice(data);
       setAiResponse(result);
     } catch (err) {
       console.error(err);
-      setError("Failed to generate career advice. Please check your API key and try again.");
+      setError("Failed to generate career advice. Please check your network and try again.");
     } finally {
       setLoading(false);
     }
@@ -42,7 +42,7 @@ function CareerAdvisor() {
           </p>
         </header>
 
-        {/* Form Component */}
+        {/* Input Form */}
         <CareerForm onFormSubmit={handleFormSubmit} />
 
         {/* Loading Indicator */}
