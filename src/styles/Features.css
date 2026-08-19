@@ -5,7 +5,9 @@
     border-top: 0px solid #5580d6;
     border-bottom: 0px solid #000000;
 }
-
+.badge span {
+  background-color: red;
+}
 
 .features-header {
     text-align: center;
@@ -59,10 +61,11 @@
 
 .feature-card:hover {
     
-    rotate: 3deg;
+    transform: rotateZ(1deg) rotateY(10deg) scale(1.05);
     
    
 }
+
 
 
 

@@ -46,7 +46,7 @@ function CareerForm({ onFormSubmit, loading }) {
           name="name"
           className="input"
           type="text"
-          placeholder="FULL NAME (e.g. Alex Johnson)"
+          placeholder="FULL NAME"
           value={formData.name}
           onChange={handleChange}
         />
@@ -107,10 +107,10 @@ function CareerForm({ onFormSubmit, loading }) {
       {/* Footer Area with Submit Button */}
       <div id="footer-area">
         <button type="submit" disabled={loading}>
-          {loading ? "CALCULATING TRAJECTORY..." : "ANALYZE CAREER "}
+          {loading ? "CALCULATING ...." : "ANALYZE CAREER "}
         </button>
         <div id="text-inside">
-          <p>Orbital AI Engine:</p>
+          <p> AI Engine:</p>
           <span id="link">ONLINE</span>
         </div>
       </div>
