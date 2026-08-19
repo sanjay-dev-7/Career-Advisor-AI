@@ -1,20 +1,39 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+/* Empty space HUD crosshair */
+html,
+body,
+#root,
+.econtainer {
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='28' height='28' viewBox='0 0 28 28' fill='none'><circle cx='14' cy='14' r='10' stroke='%2338bdf8' stroke-width='1.5' stroke-dasharray='3 3' opacity='0.7'/><circle cx='14' cy='14' r='2' fill='%2338bdf8'/><line x1='14' y1='0' x2='14' y2='6' stroke='%2338bdf8' stroke-width='1.5'/><line x1='14' y1='22' x2='14' y2='28' stroke='%2338bdf8' stroke-width='1.5'/><line x1='0' y1='14' x2='6' y2='14' stroke='%2338bdf8' stroke-width='1.5'/><line x1='22' y1='14' x2='28' y2='14' stroke='%2338bdf8' stroke-width='1.5'/></svg>") 14 14, crosshair;
     font-family: Arial, Helvetica, sans-serif;
-    background: #ffffff;
-    color: #1d1d1f;
+    background: #030712; /* Deep space black */
+    color: #f0f9ff;
 }
 
-a{
+/* Interactive elements */
+a {
     text-decoration: none;
     color: inherit;
+    cursor: pointer;
 }
 
-button{
+button {
     cursor: pointer;
+}
+
+/* Form input fields */
+input,
+textarea,
+select {
+    cursor: text;
+}
+
+/* Fallback for disabled buttons */
+button:disabled {
+    cursor: not-allowed;
 }
