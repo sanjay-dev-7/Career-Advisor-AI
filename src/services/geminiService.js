@@ -21,7 +21,7 @@ Give:
 `;
 
   const response = await ai.models.generateContent({
-    model: "gemini-flash-latest",
+    model: "gemini-3.6-flash",
     contents: prompt,
   });
 

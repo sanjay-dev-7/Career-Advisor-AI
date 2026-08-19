@@ -7,7 +7,7 @@ import Footer from "../components/Footer";
 function Home() {
   return (
     <>
-      
+      <Navbar />
       <Hero />
       <Features />
       <Footer />

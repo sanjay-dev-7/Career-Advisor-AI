@@ -1,98 +1,208 @@
-
-.career-form {
-    width: 100%;
-    max-width: 650px;
-    margin: 30px auto;
-    padding: 40px;
-    background: #ffffff;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-    border: 1px solid #e5e7eb;
-    display: flex;
-    flex-direction: column;
-    gap: 22px;
-    text-align: left;
+.career-pilot-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(170, 155, 155);
+  width: 35em;
+  max-width: 95vw;
+  border: 2px solid #5a1513;
+  border-bottom-left-radius: 1.5em;
+  border-top-right-radius: 1.5em;
+  box-shadow:
+    -10px 0px 0px #5a1313,
+    -10px 5px 12px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  position: relative;
+  transition: all 0.25s ease;
+  margin: 2rem auto;
+  padding-bottom: 1.25em;
 }
 
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+#login-area,
+.form-input-box,
+#footer-area {
+  position: relative;
+  z-index: 2;
 }
 
-
-.form-group label {
-    font-size: 14px;
-    font-weight: 600;
-    color: #374151;
-    letter-spacing: -0.2px;
+#login-area {
+  width: 100%;
+  height: 4em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  position: relative;
 }
 
-/* Form Inputs & Textarea */
-.career-form input,
-.career-form textarea {
-    width: 100%;
-    padding: 14px 16px;
-    border: 1.5px solid #d1d5db;
-    border-radius: 10px;
-    font-size: 15px;
-    font-family: inherit;
-    color: #1f2937;
-    background-color: #f9fafb;
-    outline: none;
-    transition: all 0.2s ease-in-out;
+#login-area p {
+  top: 0.4em;
+  font-size: 1.35em;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  position: absolute;
+  z-index: 2;
+  margin: 0;
 }
 
-.career-form input::placeholder,
-.career-form textarea::placeholder {
-    color: #9ca3af;
+#login-area #behind {
+  top: 68%;
+  left: 1.2em;
+  font-size: 0.75em;
+  font-weight: bold;
+  position: absolute;
+  z-index: 1;
+  color: #f5f5f5;
+  letter-spacing: 0.05em;
 }
 
-
-.career-form input:focus,
-.career-form textarea:focus {
-    border-color: #2563eb;
-    background-color: #ffffff;
-    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
+.form-input-box {
+  width: 100%;
+  padding-left: 10%;
+  padding-right: 10%;
+  margin-top: 0.85em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: all 0.25s ease;
+  box-sizing: border-box;
 }
 
-
-.career-form textarea {
-    resize: vertical;
-    min-height: 110px;
+.form-input-box input,
+.form-input-box textarea {
+  width: 100%;
+  border: 2px solid #bf4141;
+  border-radius: 0.5em;
+  padding: 0.6em 1em;
+  font-size: 0.85em;
+  font-weight: 500;
+  font-family: inherit;
+  transition: all 0.3s ease;
+  outline: none;
+  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.15);
+  box-sizing: border-box;
+  background-color: white;
+  color: #5a1313;
 }
 
-
-.submit-btn {
-    width: 100%;
-    padding: 16px;
-    margin-top: 10px;
-    border: none;
-    border-radius: 10px;
-    background: #2563eb;
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+.form-input-box textarea {
+  resize: none;
 }
 
-.submit-btn:hover {
-    background: #1d4ed8;
-    transform: translateY(-1px);
-    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.3);
+.form-input-box input::placeholder,
+.form-input-box textarea::placeholder {
+  color: #f0312a;
+  font-weight: bold;
+  font-size: 0.78em;
+  letter-spacing: 0.03em;
 }
 
-.submit-btn:active {
-    transform: translateY(0);
+/* Hover effects matching template */
+.form-input-box:hover {
+  padding-left: 6%;
+  padding-right: 6%;
 }
 
+.form-input-box:hover input,
+.form-input-box:hover textarea {
+  color: white;
+  border: 2px solid white;
+  background-color: #ee5a5a;
+}
 
-@media (max-width: 640px) {
-    .career-form {
-        padding: 24px;
-        margin: 20px auto;
-        border-radius: 12px;
-    }
+.form-input-box:hover input::placeholder,
+.form-input-box:hover textarea::placeholder {
+  color: rgba(255, 255, 255, 0.85);
+}
+
+#footer-area {
+  margin-top: 1em;
+  width: 100%;
+  padding-left: 10%;
+  padding-right: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #111111;
+  transition: all 0.25s ease;
+  box-sizing: border-box;
+}
+
+#footer-area button {
+  width: 100%;
+  border: 2px solid #f31010;
+  border-radius: 0.5em;
+  height: 2.8em;
+  font-size: 0.9em;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  transition: all 0.25s ease;
+  color: rgb(252, 232, 232);
+  background-color: #ee5751;
+  box-shadow: 0px 5px 5px -3px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+#footer-area:hover {
+  padding-left: 6%;
+  padding-right: 6%;
+}
+
+#footer-area:hover button {
+  border: 2px solid #d10000;
+  background-color: #e41616;
+}
+
+#footer-area button:active {
+  color: #6041bf;
+  background-color: white;
+}
+
+#footer-area button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+#text-inside {
+  padding-top: 0.5em;
+  display: flex;
+  gap: 0.3em;
+}
+
+#footer-area p,
+#footer-area span {
+  font-size: 0.78em;
+  margin: 0;
+  transition: all 0.25s ease;
+}
+
+#link {
+  font-weight: bold;
+  color: #852e2e;
+}
+
+#background-color {
+  width: 100%;
+  height: 4em;
+  background-color: #f80808;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  transition: all 0.4s ease;
+  box-shadow: inset 5px 0px #c71717;
+}
+
+#whitefilter {
+  width: 3.5em;
+  height: 3.5em;
+  top: 2px;
+  right: 2px;
+  position: absolute;
+  z-index: 2;
+  border-top-right-radius: 1.25em;
+  box-shadow: 35px -35px 0px -1px rgb(253, 250, 250);
+  pointer-events: none;
 }

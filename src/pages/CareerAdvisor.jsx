@@ -3,6 +3,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import CareerForm from "../components/CareerForm";
 import ResultCard from "../components/ResultCard";
+import OrbitLoader from "../components/OrbitLoader";
 import { generateCareerAdvice } from "../services/geminiService";
 import "../styles/CareerAdvisor.css";
 
@@ -24,7 +25,7 @@ function CareerAdvisor() {
       setAiResponse(result);
     } catch (err) {
       console.error(err);
-      setError("Failed to generate career advice. Please check your network and try again.");
+      setError("Mission Control Alert: Unable to plot trajectory. Please check your connection and try again.");
     } finally {
       setLoading(false);
     }
@@ -32,38 +33,47 @@ function CareerAdvisor() {
 
   return (
     <>
-      <Navbar />
-      <div className="career-page">
-        <header className="career-header">
-          <span className="badge">✨ Powered by AI</span>
-          <h1>Personalized Career Advisor</h1>
-          <p>
-            Share your skills and career aspirations to receive custom AI-driven guidance, skill gap insights, and an actionable learning roadmap.
-          </p>
-        </header>
+      <Navbar isHomePage={true} />
 
-        {/* Input Form */}
-        <CareerForm onFormSubmit={handleFormSubmit} />
+      <div className="econtainer">
+        <div className="career-page">
+          <header className="career-header">
+            <h1>🚀 CareerPilot AI Mission Control</h1>
+            <p>
+              Share your skills and career aspirations to receive custom AI-driven guidance, skill gap insights, and an actionable learning roadmap.
+            </p>
+          </header>
 
-        {/* Loading Indicator */}
-        {loading && (
-          <div className="loading-state" style={{ margin: "30px 0", fontStyle: "italic", color: "#2563eb" }}>
-            🤖 AI is analyzing your career profile... Please wait!
-          </div>
-        )}
+          {/* Input Form with loading state */}
+          <CareerForm onFormSubmit={handleFormSubmit} loading={loading} />
 
-        {/* Error Message */}
-        {error && (
-          <div className="error-message" style={{ margin: "20px 0", color: "#dc2626" }}>
-            {error}
-          </div>
-        )}
+          {/* Glowing Orbit Radar Loader */}
+          {loading && (
+            <OrbitLoader message="CALCULATING ORBITAL TRAJECTORY & SKILL MAPPING..." />
+          )}
 
-        {/* Render ResultCard with AI response once available */}
-        {!loading && aiResponse && (
-          <ResultCard data={userData} aiResponse={aiResponse} />
-        )}
+          {/* Error Message */}
+          {error && (
+            <div
+              className="error-message"
+              style={{
+                margin: "20px 0",
+                color: "#f87171",
+                fontFamily: "monospace",
+                textAlign: "center",
+              }}
+            >
+              ⚠️ {error}
+            </div>
+          )}
+
+          {/* Render ResultCard with AI response once available */}
+          {!loading && aiResponse && (
+            <ResultCard data={userData} aiResponse={aiResponse} />
+          )}
+        </div>
       </div>
+
       <Footer />
     </>
   );

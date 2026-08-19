@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "../styles/CareerForm.css";
 
-function CareerForm({ onFormSubmit }) {
+function CareerForm({ onFormSubmit, loading }) {
   const [formData, setFormData] = useState({
     name: "",
     education: "",
@@ -18,87 +18,106 @@ function CareerForm({ onFormSubmit }) {
     }));
   };
 
-  
   const handleSubmit = (e) => {
-    e.preventDefault(); // Stop page reload
+    e.preventDefault();
 
-    // Basic validation check
-    if (!formData.name || !formData.skills) {
+    if (!formData.name.trim() || !formData.skills.trim()) {
       alert("Please fill in at least your name and skills!");
       return;
     }
 
-   
     if (onFormSubmit) {
       onFormSubmit(formData);
     }
   };
 
   return (
-    <form className="career-form" onSubmit={handleSubmit}>
-      <div className="form-group">
-        <label htmlFor="name">Full Name</label>
+    <form className="form career-pilot-form" onSubmit={handleSubmit}>
+      {/* Top Banner Area */}
+      <div id="login-area">
+        <p>CAREER PILOT</p>
+        <p id="behind">Fill the Form</p>
+      </div>
+
+      {/* Full Name */}
+      <div id="email-area" className="form-input-box">
         <input
           id="name"
-          type="text"
           name="name"
-          placeholder="e.g. Alex Johnson"
+          className="input"
+          type="text"
+          placeholder="FULL NAME (e.g. Alex Johnson)"
           value={formData.name}
           onChange={handleChange}
         />
       </div>
 
-      <div className="form-group">
-        <label htmlFor="education">Education / Background</label>
+      {/* Education / Background */}
+      <div className="form-input-box">
         <input
           id="education"
-          type="text"
           name="education"
-          placeholder="e.g. B.Tech in Computer Science, Self-Taught"
+          className="input"
+          type="text"
+          placeholder="EDUCATION / BACKGROUND"
           value={formData.education}
           onChange={handleChange}
         />
       </div>
 
-      <div className="form-group">
-        <label htmlFor="skills">Technical & Soft Skills</label>
+      {/* Skills */}
+      <div className="form-input-box">
         <input
           id="skills"
-          type="text"
           name="skills"
-          placeholder="e.g. React, JavaScript, Python, Communication"
+          className="input"
+          type="text"
+          placeholder="TECHNICAL & SOFT SKILLS"
           value={formData.skills}
           onChange={handleChange}
         />
       </div>
 
-      <div className="form-group">
-        <label htmlFor="interests">Interests & Tech Domain</label>
+      {/* Interests */}
+      <div className="form-input-box">
         <input
           id="interests"
-          type="text"
           name="interests"
-          placeholder="e.g. AI/ML, Frontend Engineering, Mobile Apps"
+          className="input"
+          type="text"
+          placeholder="TECH DOMAIN / INTERESTS"
           value={formData.interests}
           onChange={handleChange}
         />
       </div>
 
-      <div className="form-group">
-        <label htmlFor="goals">Career Goals & Aspirations</label>
+      {/* Career Goals */}
+      <div id="password-area" className="form-input-box textarea-box">
         <textarea
           id="goals"
           name="goals"
-          placeholder="Describe your target job role or what you want to achieve..."
-          rows="4"
+          className="input textarea-field"
+          placeholder="CAREER GOALS & TARGET ROLES"
+          rows="3"
           value={formData.goals}
           onChange={handleChange}
-        ></textarea>
+        />
       </div>
 
-      <button type="submit" className="submit-btn">
-        Analyze My Career
-      </button>
+      {/* Footer Area with Submit Button */}
+      <div id="footer-area">
+        <button type="submit" disabled={loading}>
+          {loading ? "CALCULATING TRAJECTORY..." : "ANALYZE CAREER "}
+        </button>
+        <div id="text-inside">
+          <p>Orbital AI Engine:</p>
+          <span id="link">ONLINE</span>
+        </div>
+      </div>
+
+      {/* Template Decorative Layers */}
+      <div id="background-color"></div>
+      <div id="whitefilter"></div>
     </form>
   );
 }
