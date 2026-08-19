@@ -92,73 +92,62 @@
 
 
 .secondary-btn {
-margin-top: 8px;
- display: inline-block;
- border-radius: 7px;
- border-color: #000;
- border-width:1px;
- vertical-align:middle;
- height: 55px;
- background: #e6e9ee;
- color: rgb(0, 0, 0);
- font-family: inherit;
- text-align: center;
- font-size: 16px;
- box-shadow: 0px 15px 57px -2px #1f2020;
- width: 12em;
- padding: 1.3em;
- padding-left: 0px;
- padding-right: 0px;
- transition: all 0.4s;
- cursor: pointer;
+  margin-top: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  border: 1px solid #000;
+  height: 55px;
+  background: #e6e9ee;
+  color: #000000;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 600;
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.4);
+  width: 13em;
+  padding: 0 1.2em;
+  transition: all 0.35s ease;
+  cursor: pointer;
+  box-sizing: border-box;
+  text-decoration: none;
+  overflow: hidden;
 }
 
 .secondary-btn span {
- cursor: pointer;
- display: inline-block;
- position: relative;
- transition: 0.4s;
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.secondary-btn span:after {
- content: 'for free🚀';
- 
- position: absolute;
- opacity: 0 ;
- top: -3px;
- right: 0px;
- transition: 0.4s;
+/* \00a0 creates the guaranteed space between 'Explore' and 'for free' */
+.secondary-btn span::after {
+  content: '\00a0 for free ';
+  position: absolute;
+  left: 100%;
+  opacity: 0;
+  white-space: nowrap;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
 }
+
+/* Shift left on hover so both "Explore" and "for free 🚀" stay centered */
 .secondary-btn:hover span {
- padding-right: 4.90em;
- 
+  transform: translateX(-2.5em);
 }
 
-.secondary-btn:hover span:after {
- opacity: 4;
- right: 0;
- color:black;
+.secondary-btn:hover span::after {
+  opacity: 1;
 }
 
-/* Responsive Adjustments */
+/* Mobile full-width safety */
 @media (max-width: 768px) {
-    .hero-title {
-        font-size: 38px;
-    }
-
-    .hero-subtitle {
-        font-size: 17px;
-    }
-
-    .hero-cta-group {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .primary-btn, .secondary-btn {
-        width: 100%;
-        text-align: center;
-    }
+  .secondary-btn {
+    width: 100%;
+    max-width: 320px;
+    margin: 8px auto;
+  }
 }
 
 
